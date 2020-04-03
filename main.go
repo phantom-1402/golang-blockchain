@@ -39,7 +39,7 @@ func main() {
 
 
 	for _, block := range chain.Blocks {
-		stmtIns, err := db.Prepare("INSERT INTO testdb VALUES(?, ? )")
+		stmtIns, err := db.Prepare("INSERT INTO blockchain VALUES(?, ? )")
 		if err != nil {
 			panic(err.Error()) // proper error handling instead of panic in your app
 		}
