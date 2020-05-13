@@ -145,7 +145,16 @@ counter := Counter{1}
 		pow := blockchain.NewProof(block)
 		fmt.Printf("PoW: %s\n", strconv.FormatBool(pow.Validate()))
 
+    transaction, err := CreateTransaction("5HusYj2b2x4nroApgfvaSfKYZhRbKFH41bVyPooymbC6KfgSXdD", "1KKKK6N21XKo48zWKuQKXdvSsCf95ibHFa", 91234, "0000342dc11a9fd1833ed9fe18ca5627cedc56507de6698acfcafd301398cb35")
+    if err != nil {
+      fmt.Println(err)
+      return
+    }
+    data, _ := json.Marshal(transaction)
+    fmt.Println(string(data))
+
 
 	}
+	
 	defer db.Close()
 }
